@@ -8,7 +8,7 @@ This application will allow a user to post a project he/she has created and get 
 ## Development server
 Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automatically reload if you change any of the source files.
 
-Setup/Installation Requirements
+## Setup/Installation Requirements
 My end user must have chrome must have:
 
 visual code studio for writing your codes
