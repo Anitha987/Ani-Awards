@@ -1,7 +1,7 @@
 # Awards
 ## {Awards-Project}
 ##Description
-This is a project that creates a clone of the website for the popular photo app Instagram
+This application will allow a user to post a project he/she has created and get it reviewed by his/her peers.
 
 Development server
 Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automatically reload if you change any of the source files.
