@@ -1,9 +1,11 @@
 # Awards
+
 ## {Awards-Project}
-##Description
+
+## Description
 This application will allow a user to post a project he/she has created and get it reviewed by his/her peers.
 
-Development server
+## Development server
 Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automatically reload if you change any of the source files.
 
 Setup/Installation Requirements
