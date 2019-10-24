@@ -21,10 +21,11 @@ My end user must have chrome must have:
 My project used:
 
 - HTML
-CSS
-bootstrap and python languages.
-Code scaffolding
-To access my application a user must run python3.6 manage.py runserver.
+- CSS
+- bootstrap and python languages.
+- Code scaffolding
+
+* To access my application a user must run python3.6 manage.py runserver.
 
 Support and contact details
 If you encount any problem please let me know.below is my email
