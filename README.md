@@ -27,11 +27,12 @@ My project used:
 
 * To access my application a user must run python3.6 manage.py runserver.
 
-Support and contact details
-If you encount any problem please let me know.below is my email
+## Support and contact details
+If you encounter any problem please let me know.below is my email
 
-E-mail:anithaumuhire@gmail.com
-below is the link ofmy application
+### E-mail:anithaumuhire@gmail.com
+
+below is the link of my application
 
 https://github.com/Anitha987/Instagram
 Build
