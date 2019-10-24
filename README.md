@@ -1,6 +1,6 @@
 # Awards
 ## {Awards-Project}
-Description
+##Description
 This is a project that creates a clone of the website for the popular photo app Instagram
 
 Development server
