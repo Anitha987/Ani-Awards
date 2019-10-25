@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     photo = models.ImageField(upload_to = 'photos',null=True,blank=True)
     biography=models.TextField(max_length=60)
-    project=models.CharField(max_length=30)
+    
 
     def __str__(self):
         return self.biography
