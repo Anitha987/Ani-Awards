@@ -1,0 +1,24 @@
+{% extends 'my_awards/base.html'%}
+{% load bootstrap3% }
+{% block content %} 
+{{ block.super}}
+
+<div class="container">
+
+  <!-- Looping through news   -->
+  {% for awards in images %}
+
+  <div class="row">
+    <!-- displaying News articles -->
+    <img src="{{insta.image.url}}" class="img-responsive card-body"style="width:90%;height:90%;margin-top:10%" alt="Image">
+  </div>
+
+  {% empty %}
+  <div class="row">
+ 
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,10 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required.
+from .models import Project,Profile,User
+from .forms import newPostForm,ProfileForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+
 def get(request):
-    return render(request,'my_awards/index.html')
+    images=Project.objects.all()
+    return render(request,'my_awards/index.html',{"images":images})
 
 def new_post(request):
     current_user = request.user
