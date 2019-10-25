@@ -22,4 +22,4 @@ class Project(models.Model):
     user=models.ForeignKey(User,blank=True,null=True)
     comments=models.CharField(max_length=30)  
 
-    return title      
+       
