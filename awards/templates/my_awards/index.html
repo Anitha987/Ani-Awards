@@ -4,13 +4,16 @@
 {{ block.super}}
 
 <div class="container">
+ 
 
   <!-- Looping through news   -->
   {% for awards in images %}
-
     <!-- displaying News articles -->
-    <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:60%;height:60%;margin-top:10%;text-align:center" alt="Image">
-    <h3>{{awards.title}}</h3>
+  
+  <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:60%;height:60%;margin-top:10%;text-align:center" alt="Image">
+  <h4>{{awards.title}}</h4>
+  <h4>{{awards.description}}</h4>
+
  
 
   {% empty %}

@@ -17,7 +17,6 @@ class Project(models.Model):
     image=models.ImageField(upload_to = 'pictures',null= True)
     title=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
-    link=models.CharField(max_length=60)
     post = HTMLField()
     profile=models.ForeignKey(Profile,null= True)
     user=models.ForeignKey(User,blank=True,null=True)
