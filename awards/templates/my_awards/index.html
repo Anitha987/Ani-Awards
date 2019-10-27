@@ -9,7 +9,8 @@
   {% for awards in images %}
 
     <!-- displaying News articles -->
-    <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:90%;height:90%;margin-top:10%" alt="Image">
+    <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:60%;height:60%;margin-top:10%;text-align:center" alt="Image">
+    <h3>{{awards.title}}</h3>
  
 
   {% empty %}
