@@ -5,15 +5,15 @@
 
 <div class="container">
  
-
+  <div class="row">
   <!-- Looping through news   -->
   {% for awards in images %}
-    <!-- displaying News articles -->
-  
-  <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:60%;height:60%;margin-top:10%;text-align:center" alt="Image">
-  <strong><h5>{{awards.title}}</h5></strong>
-  <strong><h5>{{awards.description}}</h5></strong>
-
+    <!-- displaying images -->
+  <div class="col-md-4">
+    <img src="{{awards.image.url}}" class="img-responsive card-body"style="width:80%;height:80%;margin-top:40%;text-align:center" alt="Image">
+    <h4><strong>{{awards.title}}</strong></h4>
+    <h4><strong>{{awards.description}}</strong></h4>
+  </div>
  
 
   {% empty %}
@@ -21,7 +21,7 @@
  
   </div>
   {% endfor %}
-
+</div>
 </div>
 
 {% endblock %}
