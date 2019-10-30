@@ -22,9 +22,11 @@ class Project(models.Model):
     user=models.ForeignKey(User,blank=True,null=True)
     comments=models.CharField(max_length=30)  
 
-class MoringaMerch(models.Model):
-    name = models.CharField(max_length=40)
-    description = models.TextField()
-    price = models.DecimalField(decimal_places=2, max_digits=20)    
+class ProfileB(models.Model):
+    username = models.CharField(max_length=40)
+    biography = models.TextField()
+    projects = models.DecimalField(decimal_places=2, max_digits=20)
+    photo = models.ImageField(upload_to = 'photos',null=True,blank=True)       
+
 
        
