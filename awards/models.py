@@ -19,10 +19,16 @@ class Project(models.Model):
     description=models.CharField(max_length=30)
     post = HTMLField()
     profile=models.ForeignKey(Profile,null= True)
+    design=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
+    content=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
+    usability=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
     user=models.ForeignKey(User,blank=True,null=True)
     comments=models.CharField(max_length=30)  
 
-# class Review(models.Model):
+
+
+
+
 
     
     
