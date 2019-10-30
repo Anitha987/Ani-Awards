@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Project,Profile,User
-from .forms import newPostForm,ProfileForm
+from .forms import newPostForm,ProfileForm,newReviewForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -45,4 +45,26 @@ def profile_form(request):
    else:
        form = ProfileForm()
    return render(request, 'my_awards/profileform.html', {"form": form})
+
+
+@login_required(login_url='/accounts/login/')
+def review_form(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = newReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            design_rating = form.cleaned_data['design_rating']
+            content_rating = form.cleaned_data['usability_rating']
+            usability_rating = form.cleaned_data['usability_rating']
+            comment = form.cleaned_data['comment']
+            review = Review()
+            review = form.save(commit=False)
+            review.user = current_user
+            review.Profile=profile
+            review.save()
+        return redirect('reviewform')
+
+    else:
+        form = newReviewForm()
+    return render(request, 'new_post.html', {"form": form})   
 

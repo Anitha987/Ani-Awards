@@ -16,3 +16,10 @@ class newPostForm(forms.ModelForm):
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }       
+class newReviewForm(forms.ModelForm):
+   class Meta:
+      #   model = Review
+        fields = ['usability_rating','content_rating','design_rating','comment']
+        # widgets = {
+        #     'tags': forms.CheckboxSelectMultiple(),
+        # }       
