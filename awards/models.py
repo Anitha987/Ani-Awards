@@ -29,6 +29,7 @@ class Project(models.Model):
     def get_images(cls):
         images = cls.objects.all()
         return images 
+       
 
 
 
