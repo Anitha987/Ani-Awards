@@ -9,7 +9,7 @@ urlpatterns=[
     url(r'^profile/',views.profile,name='profile'),
     url(r'^accounts/profileform', views.profile_form, name='profileform'),
     url(r'^votes/',views.rating,name='reviewform'),
-    url(r'^api/profile/$', views.ProfileList.as_view()),
+    url(r'^api/profile/$', views.ProfileList.as_view(),name='profapi'),
     url(r'^api/project/$', views.ProjectList.as_view()),
 ]
 if settings.DEBUG:

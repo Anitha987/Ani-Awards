@@ -19,7 +19,7 @@ class newPostForm(forms.ModelForm):
 class newReviewForm(forms.ModelForm):
    class Meta:
         model = Project
-        exclude = ['image','title','description','post','profile','user']
+        exclude = ['image','title','description','post','profile','user','link']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }       

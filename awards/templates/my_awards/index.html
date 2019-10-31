@@ -31,6 +31,7 @@
     <a href="{{awards.design}}"></a>
 
     <h4><strong>{{awards.description}}</strong></h4>
+    <a  href="{{awards.link}}">VisitSite</a>
   </div>
 
   <!-- Modal -->
@@ -47,12 +48,12 @@
         <div class="modal-body">
           {% if awards.image %}
           <img src="{{awards.image.url}}" class="img-responsive" alt="Image" width="50%">
+         
           {% else %}
           <!-- <p>no image here!</p> -->
           {% endif %}
           <h5><strong>{{awards.description}}</strong></h5>
-          <!-- <h5>Location:{{pictures.location}}</h5>
-          <h5>Category:{{pictures.category}}</h5> -->
+          
           <br>
         </div>
         <div class="modal-footer">

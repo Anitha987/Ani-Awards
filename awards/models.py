@@ -17,12 +17,13 @@ class Project(models.Model):
     image=models.ImageField(upload_to ='pictures')
     title=models.CharField(max_length=30)
     description=models.CharField(max_length=60)
+    link=models.URLField(max_length=200,db_index=True,unique=True,null=True)
     post = HTMLField()
-    profile=models.ForeignKey(Profile,null= True)
+    profile=models.ForeignKey(Profile,null= True,on_delete=models.CASCADE)
     design=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
     content=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
     usability=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
-    user=models.ForeignKey(User,blank=True,null=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE, blank=True,null=True)
     comments=models.CharField(max_length=30) 
 
     @classmethod
