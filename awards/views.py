@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def get(request):
+    current_user = request.user
     images=Project.objects.all()
     return render(request,'my_awards/index.html',{"images":images})
 
@@ -48,13 +49,16 @@ def profile_form(request):
 
 
 @login_required(login_url='/accounts/login/')
-def rating(request,id):
-    project=Project.objects.get(id=id)
+def rating(request):
+    current_user = request.user
+    project=Project.objects.filter(user=current_user).first()
     rating = round(((project.design + project.usability + project.content)/3),1)
     if request.method == 'POST':
         form = newReviewForm(request.POST)
         if form.is_valid:
-            project.vote_submissions += 1
+            # project.vote_submissions += 1
+            project = form.save(commit=False)
+
             if project.design == 0:
                 project.design = int(request.POST['design'])
             else:

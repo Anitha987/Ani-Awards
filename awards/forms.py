@@ -12,14 +12,14 @@ class ProfileForm(forms.ModelForm):
 class newPostForm(forms.ModelForm):
    class Meta:
         model = Project
-        exclude = ['profile','comments','name','user','likes']
+        exclude = ['profile','comments','name','user','likes','design','usability','content']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }       
 class newReviewForm(forms.ModelForm):
    class Meta:
-      #   model = Review
-        fields = ['usability_rating','content_rating','design_rating','comment']
+        model = Project
+        exclude = ['image','title','description','post','profile','user']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }       

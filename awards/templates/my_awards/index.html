@@ -6,6 +6,7 @@
 <div class="container">
  
   <div class="row">
+    
   <!-- Looping through news   -->
   {% for awards in images %}
     <!-- displaying images -->
@@ -13,13 +14,15 @@
 
     <h4><strong>{{awards.title}}</strong></h4>
     <img src="{{awards.image.url}}" class="img-responsive"alt="Image" width="500" height="500">
+    <a href="{{awards.design}}"></a>
+
     <h4><strong>{{awards.description}}</strong></h4>
   </div>
  
 
   {% empty %}
   <div class="row">
- 
+    awards_project
   </div>
   {% endfor %}
 </div>

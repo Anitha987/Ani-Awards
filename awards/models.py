@@ -14,7 +14,7 @@ class Profile(models.Model):
         return self.biography
 
 class Project(models.Model):
-    image=models.ImageField(upload_to = 'pictures',null= True)
+    image=models.ImageField(upload_to ='pictures')
     title=models.CharField(max_length=30)
     description=models.CharField(max_length=30)
     post = HTMLField()
@@ -23,7 +23,12 @@ class Project(models.Model):
     content=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
     usability=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
     user=models.ForeignKey(User,blank=True,null=True)
-    comments=models.CharField(max_length=30)  
+    comments=models.CharField(max_length=30) 
+
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.all()
+        return images 
 
 
 
