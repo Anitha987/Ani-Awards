@@ -23,7 +23,7 @@ def new_post(request):
             image.user = current_user
             image.Profile=profile
             image.save()
-        return redirect('index.html')
+        return redirect('get')
 
     else:
         form = newPostForm()
