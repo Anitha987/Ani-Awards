@@ -2,6 +2,10 @@ from django.shortcuts import render,redirect
 from .models import Project,Profile,User
 from .forms import newPostForm,ProfileForm,newReviewForm
 from django.contrib.auth.decorators import login_required
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer,ProfileSerializer
+from rest_framework import status
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -76,3 +80,15 @@ def rating(request):
     else:
         form = newReviewForm()
     return render(request,'voteform.html',{'form':form,'project':project,'rating':rating})    
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_merch = Profile.objects.all()
+        serializers = ProfileSerializer(all_merch, many=True)
+        return Response(serializers.data)
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        merch = Project.objects.all()
+        serializer = ProjectSerializer(get_merch, many=True)
+        return Response(serializer.data)
