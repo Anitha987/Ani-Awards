@@ -2,10 +2,20 @@
 {% load bootstrap3% }
 {% block content %} 
 {{ block.super}}
+<style>
+/* .p{
+  position: relative;
+}
+#ro{
+  position: absolute;
+} */
+</style>
+
+<p class="p"style="width:1283px;height:700px;background-image: url(https://xlliftsinc.com/wp-content/uploads/2018/12/awards.jpg);"></p>
 
 <div class="container">
  
-  <div class="row">
+  <div class="row" id="ro" style="background-color:azure">
     
   <!-- Looping through news   -->
   {% for awards in images %}
@@ -13,11 +23,49 @@
   <div class="col-md-4">
 
     <h4><strong>{{awards.title}}</strong></h4>
+    {% if awards.image %}
     <img src="{{awards.image.url}}" class="img-responsive"alt="Image" width="500" height="500">
+    {% else %}
+    <p>This project doesn't have an image</p>
+    {% endif %}
     <a href="{{awards.design}}"></a>
 
     <h4><strong>{{awards.description}}</strong></h4>
   </div>
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="huber" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h3 class="modal-title" id="exampleModalCenterTitle"><strong>{{awards.name}}</strong></h3> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {% if awards.image %}
+          <img src="{{awards.image.url}}" class="img-responsive" alt="Image" width="50%">
+          {% else %}
+          <!-- <p>no image here!</p> -->
+          {% endif %}
+          <h5><strong>{{awards.description}}</strong></h5>
+          <!-- <h5>Location:{{pictures.location}}</h5>
+          <h5>Category:{{pictures.category}}</h5> -->
+          <br>
+        </div>
+        <div class="modal-footer">
+          <input type="text" value="127.0.0.1:8000{{pictures.image.url}}"id="link">
+           <button class="btn btn-secondary">Copy link</button> 
+          
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
  
 
   {% empty %}

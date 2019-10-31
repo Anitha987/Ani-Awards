@@ -9,7 +9,7 @@ from rest_framework import status
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
-def get(request):
+def get_images(request):
     current_user = request.user
     images=Project.objects.all()
     return render(request,'my_awards/index.html',{"images":images})
@@ -90,5 +90,5 @@ class ProfileList(APIView):
 class ProjectList(APIView):
     def get(self, request, format=None):
         merch = Project.objects.all()
-        serializer = ProjectSerializer(get_merch, many=True)
+        serializer = ProjectSerializer(merch, many=True)
         return Response(serializer.data)

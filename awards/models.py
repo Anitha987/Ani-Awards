@@ -16,7 +16,7 @@ class Profile(models.Model):
 class Project(models.Model):
     image=models.ImageField(upload_to ='pictures')
     title=models.CharField(max_length=30)
-    description=models.CharField(max_length=30)
+    description=models.CharField(max_length=60)
     post = HTMLField()
     profile=models.ForeignKey(Profile,null= True)
     design=models.IntegerField(choices=list(zip(range(0,10),range(0,10))),default=0)
